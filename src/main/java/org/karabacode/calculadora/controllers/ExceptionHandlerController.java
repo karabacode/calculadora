@@ -23,7 +23,7 @@ public class ExceptionHandlerController extends ResponseEntityExceptionHandler {
     @ExceptionHandler(value = {Exception.class})
     protected ResponseEntity<GenericResponse<Object>> handleIllegalArgument(Exception mat){
         GenericResponse<Object> response = new GenericResponse<>("Generic Error",
-                mat.getCause().getMessage());
+                mat.getMessage());
         return new ResponseEntity(response, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }

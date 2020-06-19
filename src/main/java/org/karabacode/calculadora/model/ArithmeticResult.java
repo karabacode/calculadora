@@ -13,4 +13,6 @@ public class ArithmeticResult {
         this.result = result;
     }
 
+    public ArithmeticResult(){}
+
 }
