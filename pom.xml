@@ -42,7 +42,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>org.karabacode.calculadora</mainClass>
+                    <mainClass>org.karabacode.calculadora.Calculadora</mainClass>
                 </configuration>
             </plugin>
             <plugin>
