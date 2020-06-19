@@ -1,5 +1,6 @@
 package org.karabacode.calculadora;
 
+
 import org.karabacode.calculadora.services.OperatorFactory;
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.beans.factory.config.ServiceLocatorFactoryBean;
@@ -13,5 +14,13 @@ public class Calculadora {
     public static void main(String[] args) {
 
         SpringApplication.run(Calculadora.class, args);
+    }
+
+    @Bean("operatorFactory")
+    public FactoryBean serviceLocatorFactoryBean() {
+        ServiceLocatorFactoryBean factoryBean = new ServiceLocatorFactoryBean();
+        factoryBean.setServiceLocatorInterface(OperatorFactory.class);
+        return factoryBean;
+
     }
 }
