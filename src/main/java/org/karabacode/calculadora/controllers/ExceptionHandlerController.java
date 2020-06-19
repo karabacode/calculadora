@@ -1,4 +1,4 @@
-package org.karabacode.calculadora;
+package org.karabacode.calculadora.controllers;
 
 
 import org.karabacode.calculadora.response.GenericResponse;
@@ -23,7 +23,7 @@ public class ExceptionHandlerController extends ResponseEntityExceptionHandler {
     @ExceptionHandler(value = {Exception.class})
     protected ResponseEntity<GenericResponse<Object>> handleIllegalArgument(Exception mat){
         GenericResponse<Object> response = new GenericResponse<>("Generic Error",
-                mat.getMessage());
+                mat.getCause().getMessage());
         return new ResponseEntity(response, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }
