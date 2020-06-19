@@ -11,7 +11,6 @@ import java.util.Optional;
 @Component("sum")
 public class SumServiceImpl implements ArithmeticsService {
 
-
     @Override
     public ArithmeticResult arithmeticOp(List<BigDecimal> args) {
     BigDecimal result = args.stream().reduce(BigDecimal.ZERO, (b1, b2) -> b2.add(b1));
