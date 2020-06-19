@@ -19,4 +19,11 @@ public class ExceptionHandlerController extends ResponseEntityExceptionHandler {
                 "arguments should be passed in this way localhost:8080/arithmetics/SUM/2.89,5.90, operations allowed: SUM. ERROR:" + mat.getMessage());
         return new ResponseEntity(response, HttpStatus.BAD_REQUEST);
     }
+
+    @ExceptionHandler(value = {Exception.class})
+    protected ResponseEntity<GenericResponse<Object>> handleIllegalArgument(Exception mat){
+        GenericResponse<Object> response = new GenericResponse<>("Generic Error",
+                mat.getMessage());
+        return new ResponseEntity(response, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
 }
