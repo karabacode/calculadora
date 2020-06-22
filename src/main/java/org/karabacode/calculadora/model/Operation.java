@@ -5,7 +5,8 @@ import lombok.Getter;
 
 @Getter
 public enum Operation {
-    SUM("sum");
+    SUM("sum"),
+    SUBS("subs");
 
     private final String opName;
 
